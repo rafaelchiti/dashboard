@@ -2,7 +2,7 @@
   "name": "dashboard",
   "version": "0.0.1",
   "engines": {
-    "iojs": "1.0.x"
+    "iojs": "1.1.x"
   },
   "description": "Dashboard",
   "main": "index.js",
