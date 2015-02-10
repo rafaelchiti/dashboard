@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var jeet = require('jeet');
+var WebpackErrorNotificationPlugin = require('webpack-error-notification');
 
 // webpack.config.js
 module.exports = {
@@ -7,15 +9,23 @@ module.exports = {
     vendor: ['react/addons']
   },
   output: {
-    path: './webapp/public/js',
-    filename: 'app.bundle.js'
+    path: './webapp/public/assets',
+    filename: 'app.bundle.js',
+    publicPath: "/assets/"
   },
   module: {
     loaders: [
       // {test: /\.js$/, exclude: /node_modules/, loader: '6to5-loader'},
       {test: /\.jsx$/, loader: 'jsx-loader?harmony'},
-      // {test: /\.css$/, loader: 'style-loader!css-loader'},
-      // {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'}
+      {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'},
+      {test: /\.css$/, loader: 'style!css'},
+      {test: /\.png/, loader: 'url?limit=100000&minetype=image/png'},
+      {test: /\.jpg/, loader: 'file'},
+      {test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
+      {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader"}
+    ],
+    plugins: [
+      new WebpackErrorNotificationPlugin()
     ]
   },
   resolve: {
@@ -23,5 +33,8 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
-  ]
+  ],
+  stylus: {
+    use: [jeet()]
+  }
 };

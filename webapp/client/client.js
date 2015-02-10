@@ -1,7 +1,7 @@
 var React = require('react/addons');
-var App = require('./components/application')
+var Router = require('react-router');
+var routes = require('./routes/routes');
 
-React.render(
-  React.createElement(App),
-  document.querySelector('#js-reactMountingPoint')
-);
+Router.run(routes, Router.HistoryLocation, function (Handler) {
+  React.render(React.createElement(Handler), document.body);
+});
