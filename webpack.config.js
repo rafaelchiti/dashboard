@@ -19,6 +19,7 @@ module.exports = {
       {test: /\.jsx$/, loader: 'jsx-loader?harmony'},
       {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'},
       {test: /\.css$/, loader: 'style!css'},
+      {test: /\.json$/, loader: 'json-loader'},
       {test: /\.png/, loader: 'url?limit=100000&minetype=image/png'},
       {test: /\.jpg/, loader: 'file'},
       {test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},

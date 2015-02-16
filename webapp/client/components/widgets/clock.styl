@@ -1,0 +1,43 @@
+@import 'jeet'
+@import 'nib'
+@import '../../../assets/stylesheets/variables'
+@import '../../../assets/stylesheets/colors'
+
+.clockWidget
+  padding 0
+  width 15rem
+  position relative
+  clear both
+  background-color primaryWhite
+  border-radius 0
+
+  .clockWidget_mainSectionWrapper
+    height 8rem
+    width 100%
+    background-size cover
+
+  .clockWidget_mainSection
+    position relative
+    height 100%
+    width 100%
+    border-bottom none
+
+  .clockWidget_bottomSection
+    position relative
+    padding-top .5rem
+    padding-bottom .8rem
+    text-align center
+    border-top none
+
+    >._time
+      display block
+      color primaryBlack
+      font-weight 300
+      font-size 4rem
+
+    >._city
+      display block
+      width 100%
+      color primaryBlack
+      font-weight 300
+      font-size 2rem
