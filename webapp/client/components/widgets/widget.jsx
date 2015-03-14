@@ -1,8 +1,8 @@
-var React = require('react/addons');
+import React from 'react/addons';
 
 require('./widget.styl');
 
-var Widget = React.createClass({
+export default class Widget extends React.Component {
 
   render() {
     var classes = 'widget ' + (this.props.className || '');
@@ -14,6 +14,4 @@ var Widget = React.createClass({
     );
   }
 
-});
-
-module.exports = Widget;
+}

@@ -1,9 +1,9 @@
-var React = require('react/addons');
-var Widget = require('./widget');
+import React from 'react/addons';
+import Widget  from './widget';
 
 require('./weather.styl');
 
-var WeatherWidget = React.createClass({
+export default class WeatherWidget extends React.Component {
 
   render() {
     return (
@@ -37,9 +37,6 @@ var WeatherWidget = React.createClass({
 
       </Widget>
     );
-  },
+  }
 
-
-});
-
-module.exports = WeatherWidget;
+}

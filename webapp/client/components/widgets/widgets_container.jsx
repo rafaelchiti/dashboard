@@ -1,10 +1,10 @@
-var React = require('react/addons');
-var WeatherWidget = require('./weather');
-var ClockWidget = require('./clock');
+import React from 'react/addons';
+import WeatherWidget from './weather';
+import ClockWidget from './clock';
 
 require('./widgets_container.styl');
 
-var WidgetsContainer = React.createClass({
+export default class WidgetsContainer extends React.Component {
 
   render() {
     return (
@@ -17,6 +17,4 @@ var WidgetsContainer = React.createClass({
     );
   }
 
-});
-
-module.exports = WidgetsContainer;
+}
