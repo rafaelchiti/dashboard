@@ -15,8 +15,8 @@ module.exports = {
   },
   module: {
     loaders: [
-      // {test: /\.js$/, exclude: /node_modules/, loader: '6to5-loader'},
-      {test: /\.jsx$/, loader: 'jsx-loader?harmony'},
+      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      {test: /\.jsx$/, loader: 'babel-loader'},
       {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'},
       {test: /\.css$/, loader: 'style!css'},
       {test: /\.json$/, loader: 'json-loader'},
@@ -33,7 +33,8 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.styl']
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+    new WebpackErrorNotificationPlugin()
   ],
   stylus: {
     use: [jeet()]

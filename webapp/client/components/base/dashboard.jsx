@@ -1,7 +1,7 @@
-var React = require('react/addons');
-var WidgetsContainer = require('../widgets/widgets_container');
+import React from 'react/addons';
+import WidgetsContainer from '../widgets/widgets_container';
 
-var Dashboard = React.createClass({
+export default class Dashboard extends React.Component {
 
   render() {
     return (
@@ -11,6 +11,4 @@ var Dashboard = React.createClass({
     );
   }
 
-});
-
-module.exports = Dashboard;
+}

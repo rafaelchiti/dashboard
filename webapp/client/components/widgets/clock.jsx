@@ -1,15 +1,17 @@
-var React = require('react/addons');
-var Widget = require('./widget');
-var moment = require('moment-timezone');
+import React from 'react/addons';
+import Widget from './widget';
+import moment  from 'moment-timezone';
 
 require('./clock.styl');
 
 
-var ClockWidget = React.createClass({
+export default class ClockWidget extends React.Component {
 
-  getInitialState() {
-    return getState(this.props);
-  },
+  constructor(props) {
+    super(props);
+
+    this.state = getState(props);
+  }
 
   render() {
     return (
@@ -27,7 +29,7 @@ var ClockWidget = React.createClass({
 
       </Widget>
     );
-  },
+  }
 
   wrapperStyle() {
     var url = require('../../../assets/images/cities/' + this.props.imageName + '.png');
@@ -38,10 +40,9 @@ var ClockWidget = React.createClass({
   }
 
 
-});
+};
 
-getState = (props) => {
+var getState = (props) => {
   return {time: moment().tz(props.timezone).format('HH:mm')};
 }
 
-module.exports = ClockWidget;

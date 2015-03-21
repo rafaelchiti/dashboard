@@ -1,7 +1,6 @@
-var React = require('react/addons');
+import React from 'react/addons';
 
-
-var Settings = React.createClass({
+export default class Settings extends React.Component {
 
   render() {
     return (
@@ -11,6 +10,4 @@ var Settings = React.createClass({
     );
   }
 
-});
-
-module.exports = Settings;
+}
